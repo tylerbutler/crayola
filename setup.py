@@ -11,7 +11,7 @@ from distutils.util import convert_path
 from setuptools import setup, find_packages
 
 PROJECT = 'crayola'
-version = '0.1.0'
+version = '0.1.1'
 
 ################################################################################
 # find_package_data written by Ian Bicking.

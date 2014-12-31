@@ -52,13 +52,12 @@ class ColorStreamHandler(logging.StreamHandler):
         return ''.join(str_list) + message + Style.RESET_ALL
 
     def format(self, record):
-        reset = Style.RESET_ALL
         message = logging.StreamHandler.format(self, record)
         parts = message.split('\n')
         joiner = '' if len(parts) == 1 else '\n'
 
         if not self.multiline_color:
-            parts[0] += reset
+            parts[0] += Style.RESET_ALL
 
         message = joiner.join(parts)
         return self.colorize(record.levelno, message)
